@@ -1,9 +1,19 @@
 {
-    "notes": [
+  "notes": [
     {
-        "id": "123",
-        "title":"Test Title",
-        "text":"Test text"
+      "title": "Note 1",
+      "text": "First Note",
+      "id": "7bdbble5gkwsn0ak7"
+    },
+    {
+      "title": "Note 2",
+      "text": "Second Notes. This is an update.",
+      "id": "7bdbblhz0kwsn0u4s"
+    },
+    {
+      "title": "Note 3",
+      "text": "Third Note!",
+      "id": "7bdbbled8kwsni4jd"
     }
-]
+  ]
 }
