@@ -9,6 +9,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.4"
-  }
+    "express": "^4.17.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hifishbone/miniature-eureka.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/Hifishbone/miniature-eureka/issues"
+  },
+  "homepage": "https://github.com/Hifishbone/miniature-eureka#readme"
 }
