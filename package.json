@@ -1,14 +1,23 @@
 {
   "name": "note-taker",
   "version": "1.0.0",
-  "description": "",
+  "description": "for taking notes at work",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
-  "author": "",
+  "author": "Hank Hint",
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hankhint/miniature-eureka.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hankhint/miniature-eureka/issues"
+  },
+  "homepage": "https://github.com/hankhint/miniature-eureka#readme"
 }
