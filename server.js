@@ -1,7 +1,8 @@
-//routes to html file and api file
 const express = require("express");
-const htmlRoutes = require(".routes/htmlRoutes");
-const apiRoutes = require(".routes/apiRoutes");
+
+//routes to html file and api file
+const apiRoutes = require("./routes/apiRoutes");
+const htmlRoutes = require("./routes/htmlRoutes");
 
 //launch localhost webpage via express
 const app = express();
@@ -23,6 +24,7 @@ app.use(express.static("public"));
 app.use("/api", apiRoutes);
 app.use("/", htmlRoutes);
 
+//app telling users the server is running
 app.listen(PORT, () => {
     console.log(`API server now on port ${PORT}`);
 })
