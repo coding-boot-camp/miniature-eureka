@@ -3,6 +3,13 @@ let noteText;
 let saveNoteBtn;
 let newNoteBtn;
 let noteList;
+var nextPage
+
+
+function GetStarted() { element.addEventListener ("nextPabtn btn-primary btn-lg mt-4ge", function(){window.location.herf="notes/"})};
+
+
+
 
 if (window.location.pathname === '/notes') {
   noteTitle = document.querySelector('.note-title');
