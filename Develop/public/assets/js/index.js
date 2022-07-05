@@ -6,8 +6,10 @@ let noteList;
 var nextPage
 
 
-function GetStarted() { element.addEventListener ("nextPabtn btn-primary btn-lg mt-4ge", function(){window.location.herf="notes/"})};
-
+function GetStarted() { element.addEventListener ("nextPabtn btn-primary btn-lg mt-4ge")}
+function GetStarted() {
+  window.location = 'new url'
+}
 
 
 
