@@ -5,14 +5,6 @@ let newNoteBtn;
 let noteList;
 var nextPage
 
-
-function GetStarted() { element.addEventListener ("nextPabtn btn-primary btn-lg mt-4ge")}
-function GetStarted() {
-  window.location = 'new url'
-}
-
-
-
 if (window.location.pathname === '/notes') {
   noteTitle = document.querySelector('.note-title');
   noteText = document.querySelector('.note-textarea');
@@ -40,7 +32,9 @@ const getNotes = () =>
     headers: {
       'Content-Type': 'application/json',
     },
-  });
+  }).then((notesData) => {
+    console.log("test: ", notesData);
+  })
 
 const saveNote = (note) =>
   fetch('/api/notes', {
