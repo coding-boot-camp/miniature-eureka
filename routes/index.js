@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const notes = require('./notes');
+const apiRoutes = require('./api');
 
-app.use("/notes",notes)
+app.use("/api",apiRoutes)
 module.exports = app;
