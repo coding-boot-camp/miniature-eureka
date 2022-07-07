@@ -3,7 +3,6 @@ let noteText;
 let saveNoteBtn;
 let newNoteBtn;
 let noteList;
-var nextPage
 
 if (window.location.pathname === '/notes') {
   noteTitle = document.querySelector('.note-title');
@@ -32,9 +31,7 @@ const getNotes = () =>
     headers: {
       'Content-Type': 'application/json',
     },
-  }).then((notesData) => {
-    console.log("test: ", notesData);
-  })
+  });
 
 const saveNote = (note) =>
   fetch('/api/notes', {
