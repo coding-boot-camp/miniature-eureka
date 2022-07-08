@@ -29,7 +29,7 @@ You can install this application via my git hub which is listed in this read me 
 You can view my test via the video uploaded with the assinment.
 
 #### Usage
-Connect to heroku: https://note-backend-test.herokuapp.com/notes
+Connect to heroku: https://note-backend-test.herokuapp.com/
 
 #### Contributers
 Bryson Benson
