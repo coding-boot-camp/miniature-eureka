@@ -12,6 +12,13 @@ if (window.location.pathname === '/notes') {
   noteList = document.querySelectorAll('.list-container .list-group');
 }
 
+// In order to create an "id" property for each note object, we set this variable
+// equal to the number of notes in the db every time the page loads.
+// (see renderNoteList function below for when a value is set to this variable)
+// This should be reliable because the renderNoteList function is called every time
+// the page loads/reloads and when a note is saved/deleted. Shouldn't go out of sync.
+let noteCount = 0;
+
 // Show an element
 const show = (elem) => {
   elem.style.display = 'inline';
@@ -67,7 +74,12 @@ const renderActiveNote = () => {
 };
 
 const handleNoteSave = () => {
+  
+  const allNotes = getNotes()
+  console.log(allNotes);
+  
   const newNote = {
+    id: noteCount.toString(),
     title: noteTitle.value,
     text: noteText.value,
   };
@@ -84,6 +96,7 @@ const handleNoteDelete = (e) => {
 
   const note = e.target;
   const noteId = JSON.parse(note.parentElement.getAttribute('data-note')).id;
+  console.log(`noteId: ${noteId}`);
 
   if (activeNote.id === noteId) {
     activeNote = {};
@@ -119,6 +132,7 @@ const handleRenderSaveBtn = () => {
 // Render the list of note titles
 const renderNoteList = async (notes) => {
   let jsonNotes = await notes.json();
+  noteCount = jsonNotes.length; // here's where the id-generating number is set. This function called very often, so this should never go out of sync.
   if (window.location.pathname === '/notes') {
     noteList.forEach((el) => (el.innerHTML = ''));
   }
