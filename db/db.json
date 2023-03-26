@@ -1,7 +1,17 @@
 [
     {
-        "id": "0",
-        "title": "Welcome!",
-        "text": "To create a new note, click on the + symbol in the top-right corner.\nOnce you give your new note a title and some content, the Save icon will appear next to the + icon. Click it to save the new note!\n\nTo delete a note, simply locate it in the list to the left and click on its red trash bin icon.\n\nHappy noting!\n\nNOTE: Editing existing notes not supported."
+        "id": "1",
+        "title": "1",
+        "text": "1"
+    },
+    {
+        "id": "1",
+        "title": "asdf",
+        "text": "asdf"
+    },
+    {
+        "id": "2",
+        "title": "2",
+        "text": "2"
     }
 ]
