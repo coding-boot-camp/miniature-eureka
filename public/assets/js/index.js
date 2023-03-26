@@ -1,3 +1,5 @@
+const shortid = require('shortid');
+
 let noteTitle;
 let noteText;
 let saveNoteBtn;
@@ -79,7 +81,7 @@ const handleNoteSave = () => {
   console.log(allNotes);
   
   const newNote = {
-    id: noteCount.toString(),
+    id: shortid.generate(),
     title: noteTitle.value,
     text: noteText.value,
   };
