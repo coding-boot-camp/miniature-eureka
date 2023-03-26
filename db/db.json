@@ -1,12 +1,7 @@
 [
     {
-        "id": "AdV5yTTTH",
-        "title": "asdf",
-        "text": "asdf"
-    },
-    {
-        "id": "KRmnF4-oT",
-        "title": "hghghg",
-        "text": "hghghgh"
+        "id": "thpam1oQ5",
+        "title": "Welcome!",
+        "text": "Thanks for checking out my note taker app! This was really just a coding bootcamp challenge, but it definitely works so I won't stop you from using it.\n\nTo create a new note, simply click the + icon in the upper-right corner. Once you've entered a title and some content, a save icon will appear next to the + icon. Click that to save your note.\n\nYour saved notes will appear in that list on the left. Click on a note to read it, or click on its red trash bin icon to delete it.\n\nNB: Editing notes not supported."
     }
 ]
