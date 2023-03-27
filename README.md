@@ -1,8 +1,19 @@
-# Challenge 
+# Challenge 📝
 
 Create an application called Note Taker that can be used to write and save notes
 
 ## Table of Contents
+- [User Story ✏](#user-story)
+
+- [Accepting Criteria ✅](#accepting-criteria)
+
+- [Preview 🔍](#preview)
+
+- [Deployed Page 🔥](#deployed-page)
+
+- [Contributors 😎](#contributors)
+
+- [Licenses 🗒](#licenses)
 
 ## User Story
 ```
@@ -11,7 +22,7 @@ I WANT to be able to write and save notes
 SO THAT I can organize my thoughts and keep track of tasks I need to complete
 ```
 
-## Acceptance Criteria
+## Accepting Criteria
 ```
 GIVEN a note-taking application
 WHEN I open the Note Taker
@@ -33,7 +44,8 @@ THEN I am presented with empty fields to enter a new note title and the note’s
 
 ## Deployed Page
 (TBA)
-
 ## Contributors
+[😎 Christina Vuong ](https://github.com/ccvuong)
 
 ## Licenses
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
