@@ -6,6 +6,7 @@ let newNoteBtn;
 let noteList;
 
 //IF the pathname is equal to /notes create these elements 
+//had incorrect path
 if (window.location.pathname === '/notes.html') {
   noteTitle = document.querySelector('.note-title');
   noteText = document.querySelector('.note-textarea');
@@ -25,6 +26,7 @@ const hide = (elem) => {
 };
 
 // activeNote is used to keep track of the note in the textarea
+//activeNote is an empty object here
 let activeNote = {};
 
 const getNotes = () =>
@@ -46,6 +48,8 @@ const saveNote = (note) =>
     body: JSON.stringify(note),
   });
 
+//this is where the note is deleted
+//fetches DELETE from the rest api
 const deleteNote = (id) =>
   fetch(`/api/notes/${id}`, {
     method: 'DELETE',
@@ -54,27 +58,38 @@ const deleteNote = (id) =>
     },
   });
 
+//render the Note that is clicked on?
 const renderActiveNote = () => {
+  //hide the save note btn
   hide(saveNoteBtn);
 
+  //if activeNote.id is truthy
   if (activeNote.id) {
+    //set the note title and text attribute's to readonly
     noteTitle.setAttribute('readonly', true);
     noteText.setAttribute('readonly', true);
+    //set the values of the right column to the Note that was clicked. 
     noteTitle.value = activeNote.title;
     noteText.value = activeNote.text;
-  } else {
+  }
+  else {
+    //remove the readonly attribute to allow a new note to be entered 
     noteTitle.removeAttribute('readonly');
     noteText.removeAttribute('readonly');
+    //set the text input fields to be empty
     noteTitle.value = '';
     noteText.value = '';
   }
 };
 
+
 const handleNoteSave = () => {
+  //object containing title and text
   const newNote = {
     title: noteTitle.value,
     text: noteText.value,
   };
+  //save Note with the new Note as the parameter, then render note, render activeNote
   saveNote(newNote).then(() => {
     getAndRenderNotes();
     renderActiveNote();
@@ -82,6 +97,7 @@ const handleNoteSave = () => {
 };
 
 // Delete the clicked note
+// e is event
 const handleNoteDelete = (e) => {
   // Prevents the click listener for the list from being called when the button inside of it is clicked
   e.stopPropagation();
@@ -106,7 +122,7 @@ const handleNoteView = (e) => {
   renderActiveNote();
 };
 
-// Sets the activeNote to and empty object and allows the user to enter a new note
+// Sets the activeNote to an empty object calls renderActiveNote function
 const handleNewNoteView = (e) => {
   activeNote = {};
   renderActiveNote();
@@ -123,6 +139,7 @@ const handleRenderSaveBtn = () => {
 // Render the list of note titles
 const renderNoteList = async (notes) => {
   let jsonNotes = await notes.json();
+  //had incorrect path
   if (window.location.pathname === '/notes.html') {
     noteList.forEach((el) => (el.innerHTML = ''));
   }
@@ -169,6 +186,7 @@ const renderNoteList = async (notes) => {
     noteListItems.push(li);
   });
 
+  //had incorrect path
   if (window.location.pathname === '/notes.html') {
     noteListItems.forEach((note) => noteList[0].append(note));
   }
@@ -177,6 +195,7 @@ const renderNoteList = async (notes) => {
 // Gets notes from the db and renders them to the sidebar
 const getAndRenderNotes = () => getNotes().then(renderNoteList);
 
+//had incorrect path
 if (window.location.pathname === '/notes.html') {
   saveNoteBtn.addEventListener('click', handleNoteSave);
   newNoteBtn.addEventListener('click', handleNewNoteView);

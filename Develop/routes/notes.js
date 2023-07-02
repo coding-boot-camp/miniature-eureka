@@ -23,7 +23,7 @@ notes.post('/', (req,res) => {
     //Check to make sure all properties are present 
     if (title && text) {
         //object that will be saved 
-        const newNote = {title, text, note_id: uuidv4()};
+        const newNote = {title, text, id: uuidv4()};
 
         //append object to the database 
         readAndAppend(newNote, './db/db.json')
