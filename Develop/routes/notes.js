@@ -1,11 +1,14 @@
+//import required libraries 
+//express 
+//
 const notes = require('express').Router();
-const path = require('path')
 const fs =  require('fs')
 const {
   readFromFile,
   readAndAppend,
   writeToFile,
 } = require('../helpers/fsUtils');
+const { v4: uuidv4 } = require('uuid')
 
 //GET route that retrieves all the notes 
 notes.get('/', (req,res) =>
@@ -20,7 +23,7 @@ notes.post('/', (req,res) => {
     //Check to make sure all properties are present 
     if (title && text) {
         //object that will be saved 
-        const newNote = {title, text};
+        const newNote = {title, text, note_id: uuidv4()};
 
         //append object to the database 
         readAndAppend(newNote, './db/db.json')
@@ -34,8 +37,12 @@ notes.post('/', (req,res) => {
         res.json(response);
     }
     else {
-        res.json('Error in posting feedback')
+        res.json('Error in saving notes ')
     }
 });
+/*
+app.delete('/api/notes/:id', (req,res) => 
+  
+);*/
 
 module.exports = notes;
