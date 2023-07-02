@@ -1,10 +1,15 @@
 const notes = require('express').Router();
 const path = require('path')
 const fs =  require('fs')
+const {
+  readFromFile,
+  readAndAppend,
+  writeToFile,
+} = require('../helpers/fsUtils');
 
 //GET route that retrieves all the notes 
 notes.get('/', (req,res) =>
-    readFromFile('../db/db.json').then((data) => res.json(JSON.parse(data)))
+    readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)))
 )
 
 //POST to submit and save notes
@@ -18,7 +23,7 @@ notes.post('/', (req,res) => {
         const newNote = {title, text};
 
         //append object to the database 
-        readAndAppend(newNote, '../db/db.json')
+        readAndAppend(newNote, './db/db.json')
 
         //object holding, status and note content
         const response = {

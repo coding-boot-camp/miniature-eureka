@@ -14,15 +14,15 @@ const api = require('./routes/index.js')
 const app = express();
 const PORT = 3001;
 
+//Import custom middleware,clog
+app.use(clog)
 //middleware, to parse sent data
 //express.json, recognizes data as a JSON object
 //express.urlencoded, recognizes data as strings or arrays 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
 //create instance of rest api 
 app.use('/api', api)
-
 //middleware serve static files from the /public folder
 app.use(express.static('public'))
 
@@ -33,7 +33,9 @@ app.get('/', (req, res) =>
 
 // GET Route for notes page
 app.get('/notes', (req, res) =>
+  
   res.sendFile(path.join(__dirname, '/public/notes.html'))
+  
 );
 
 // GET Route for homepage, using WILDCARD as denoted by * 
