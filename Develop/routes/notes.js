@@ -1,4 +1,6 @@
 const notes = require('express').Router();
+const path = require('path')
+const fs =  require('fs')
 
 //GET route that retrieves all the notes 
 notes.get('/', (req,res) =>

@@ -1,8 +1,14 @@
-///import express and path libraries 
+///import libraries
+//clog custom middleware 
 const { clog } = require('./middleware/clog')
+//express
 const express = require('express')
+//path library
 const path = require('path')
-const api = require('./routes/notes.js')
+//fs library 
+const fs =  require('fs')
+//import rest api
+const api = require('./routes/index.js')
 
 //call instance of express 
 const app = express();
@@ -13,6 +19,8 @@ const PORT = 3001;
 //express.urlencoded, recognizes data as strings or arrays 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+//create instance of rest api 
 app.use('/api', api)
 
 //middleware serve static files from the /public folder
