@@ -47,15 +47,15 @@ notes.post('/', (req,res) => {
 //'/api/notes/:id'
 notes.delete('/:id', async (req,res) => {
     //req.params, contains route parameters
-    //IF the parameters are specified when a URL is built, then req.parms object will be populated with said URL
+    //IF the parameters are specified when a URL is built, then req.params object will be populated with said URL
     //in this example it's :id 
     //you can chain this if you wanted to pull other parameters ex. '/:id/:text'
     let { id } = req.params;
     //returns the id of the note clicked
-    console.log(id)
+    //console.log(id)
     //parse the JSON file and save it as an object for comparison
     var db = JSON.parse(fs.readFileSync('./db/db.json'))
-    console.log(db)
+    //console.log(db)
     //for..in, the obj 
     //note represents the index basically
     for(const note in db) {

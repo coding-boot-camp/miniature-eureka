@@ -102,13 +102,18 @@ const handleNoteDelete = (e) => {
   // Prevents the click listener for the list from being called when the button inside of it is clicked
   e.stopPropagation();
 
+  //note is equal to the delete button clicked
   const note = e.target;
+  //noteID is equal to the ID of the parent element
   const noteId = JSON.parse(note.parentElement.getAttribute('data-note')).id;
 
+  //if the id's are equal, set the active note to be empty
   if (activeNote.id === noteId) {
     activeNote = {};
   }
 
+  console.log(noteId)
+  //run deleteNote function then run needed functions to re-render 
   deleteNote(noteId).then(() => {
     getAndRenderNotes();
     renderActiveNote();
