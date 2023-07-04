@@ -51,6 +51,8 @@ const saveNote = (note) =>
 //this is where the note is deleted
 //fetches DELETE from the rest api
 const deleteNote = (id) =>
+//by default it returns a promise..
+//nothing is returned
   fetch(`/api/notes/${id}`, {
     method: 'DELETE',
     headers: {
@@ -91,6 +93,7 @@ const handleNoteSave = () => {
   };
   //save Note with the new Note as the parameter, then render note, render activeNote
   saveNote(newNote).then(() => {
+    console.log('inside saveNote')
     getAndRenderNotes();
     renderActiveNote();
   });
@@ -111,10 +114,10 @@ const handleNoteDelete = (e) => {
   if (activeNote.id === noteId) {
     activeNote = {};
   }
-
-  console.log(noteId)
+  console.log('before then')
   //run deleteNote function then run needed functions to re-render 
   deleteNote(noteId).then(() => {
+    console.log('inside then')
     getAndRenderNotes();
     renderActiveNote();
   });
@@ -126,6 +129,7 @@ const handleNoteView = (e) => {
   activeNote = JSON.parse(e.target.parentElement.getAttribute('data-note'));
   renderActiveNote();
 };
+
 
 // Sets the activeNote to an empty object calls renderActiveNote function
 const handleNewNoteView = (e) => {
@@ -144,6 +148,7 @@ const handleRenderSaveBtn = () => {
 // Render the list of note titles
 const renderNoteList = async (notes) => {
   let jsonNotes = await notes.json();
+
   //had incorrect path
   if (window.location.pathname === '/notes.html') {
     noteList.forEach((el) => (el.innerHTML = ''));

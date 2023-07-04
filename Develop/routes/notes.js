@@ -45,7 +45,7 @@ notes.post('/', (req,res) => {
 //DELETE notes based on ids
 //app.delete(path, callback, [callback])
 //'/api/notes/:id'
-notes.delete('/:id', async (req,res) => {
+notes.delete('/:id', (req,res) => {
     //req.params, contains route parameters
     //IF the parameters are specified when a URL is built, then req.params object will be populated with said URL
     //in this example it's :id 
@@ -63,11 +63,17 @@ notes.delete('/:id', async (req,res) => {
         if(id == db[note].id) {
             //remove the object in the array at that index
             db.splice([note], 1)
+            //write the information back to the original JSON to update it 
+            //stringify parameters, are replacer and spacing 
+            fs.writeFileSync('./db/db.json', JSON.stringify(db, null, 4))
+            //a response needs to be passed back or else the promise will pend forever 
+            //if successful
+            res.json('Note delete successful.')
+        } else {
+            //if fail 
+            res.json('Note delete failed.')
         }
     }
-    //write the information back to the original JSON to update it 
-    //stringify parameters, are replacer and spacing 
-    fs.writeFileSync('./db/db.json', JSON.stringify(db, null, 4))
 });
 
 module.exports = notes;
