@@ -12,7 +12,7 @@ const api = require('./routes/index.js')
 
 //call instance of express 
 const app = express();
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
 //Import custom middleware,clog
 app.use(clog)
