@@ -6,7 +6,14 @@
 
 This app is called the NoteTaker and it allows you to write and save notes. This application will use an Express.js back end and will save and retrieve note daa from a JSON file.
 
-
+## Table of Contents
+- [User-Story](#user-story)
+- [Acceptance-Criteria](#acceptance-criteria)
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Contributing](#contributing)
+- [Test](#test)
 
 
 # User Story
@@ -33,6 +40,31 @@ WHEN I click on an existing note in the list in the left-hand column
 THEN that note appears in the right-hand column
 WHEN I click on the Write icon in the navigation at the top of the page
 THEN I am presented with empty fields to enter a new note title and the note’s text in the right-hand column
+
+## Installation
+There is no installation needed. Simply head on over to the deployed app on heroku using the link below.
+
+
+## Usage
+This app is ment for your to take notes on the fly, and once you are done with your task, you can simply and quickly delete it.
+
+## License
+This app is covered under MIT license. For details and limitations of this license please visit:
+[License Link for MIT](https://opensource.org/licenses/MIT)
+
+## Contributing
+If you would like to share your feedback and/or contribute your best practices to make our code better, feel free to get in touch with us via:
+  GitHub: [11-Note-Taker-ExpressJS - link](https://github.com/VithusanU/NoteTaker)<br>
+
+## Test
+We are using jest for testing the development of the functions. No test have been written for this application yet.
+<br>
+
+### Deployed Links
+
+1. You can find the link to the deployed application **here:** <br> [Note Taker - Heroku link]
+
+2. You can find the URL of my GitHub repository that contains this code **here:** <br>[GitHub Repo - link](https://github.com/VithusanU/NoteTaker)
 
 
 # Credits
