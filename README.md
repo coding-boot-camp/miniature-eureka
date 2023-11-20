@@ -1,4 +1,4 @@
-# Note Taker
+# Note Taker Express.js Application
 
 ## Table of Contents
 
