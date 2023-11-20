@@ -20,17 +20,17 @@
 
   <body>
     <nav class="navbar bg-info">
-      <a class="navbar-brand text-light p-3" href="/">Note Taker </a>
+      <a class="navbar-brand text-light p-3" href="/index.html">Note Taker </a>
       <div class="icons">
-        <button type="button" class="btn btn-outline-light btn-sm save-note">
+        <button type="button" class="btn btn-outline-light btn-sm" id="save-note">
           <span class="fas fa-save"></span>
           <span>Save Note</span>
         </button>
-        <button type="button" class="btn btn-outline-light btn-sm new-note">
+        <button type="button" class="btn btn-outline-light btn-sm" id="new-note">
           <span class="fas fa-edit"></span>
           <span>New Note</span>
         </button>
-        <button type="button" class="btn btn-sm btn-outline-danger clear-btn">
+        <button type="button" class="btn btn-sm btn-outline-danger" id="clear-btn">
           <span class="fas fa-times"></span>
           <span>Clear Form</span>
         </button>
@@ -41,17 +41,19 @@
         <div class="col-4 list-container" id="list-container">
           <div class="card">
             <ul class="list-group" id="list-group"></ul>
+            <li class="list-group-item">notes here</li>
+          <li class="list-group-item">as well as here</li>
           </div>
         </div>
         <div class="col-8">
           <form class="note-form">
-            <input
+            <input id="note-title"
             class="note-title"
             placeholder="Note Title"
             maxlength="28"
             type="text"
             />
-            <textarea class="note-textarea" placeholder="Note Text"></textarea>
+            <textarea id="note-textarea" class="note-textarea" placeholder="Note Text"></textarea>
             </form>
         </div>
       </div>
